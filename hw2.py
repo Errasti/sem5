@@ -53,7 +53,7 @@ def game_vs_friend(candy_amount, max_candy_grab, attempts):
             print(f'Вы взяли слишком много или слишком мало. Всего:{candy_amount},'
                   f' за ход можно взять:{max_candy_grab} и не меньше "1" конфеты')
             while attempts > 0:
-                if max_candy_grab >= user_grab <= max_candy_grab and user_grab != 0:
+                if max_candy_grab >= user_grab <= candy_amount and user_grab != 0:
                     break
                 print(f'Попробуйте еще раз, у вас {attempts} попытки')
                 user_grab = int(input("Сколько конфет берем?\n"))
