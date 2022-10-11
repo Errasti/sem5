@@ -1,4 +1,4 @@
-with open('txt1', 'r') as data:
+with open('txt1', 'r', encoding='UTF-8') as data:
     crypt = data.read()
 
 
@@ -7,14 +7,14 @@ def encode_rle(ss):
     prev_char = ''
     count = 1
     for char in ss:
-        if char != prev_char:
+        if char != prev_char or not char:
             if prev_char:
                 str_code += str(count) + prev_char
             count = 1
             prev_char = char
         else:
             count += 1
-    return str_code
+    return str_code + str(count) + prev_char
 
 
 str_code = encode_rle(crypt)
